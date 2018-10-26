@@ -1,3 +1,77 @@
 <div class="jumbotron">
-<h3>Welcome to God's World</h3>
+    <h1>Find Best Deals in South Africa</h1>
+    <h5>From cosy homes to funky city flats, we got you</h5>
+
+<div class="row">
+<div class="col-sm-2">
+      <input type="text" class="form-control" [(ngModel)]="destination" placeholder="Where are you going?">
 </div>
+<div class="col-sm-2">
+      <input type="text"
+            class="form-control"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            #dp="bsDaterangepicker"
+            bsDaterangepicker  [bsConfig]="datePickerConfig"  [(bsValue)]="myDateValue" [(ngModel)]="check_out_date" placeholder="Check-In - Check-Out"> 
+</div>
+<div class="col-sm-2">
+    <div class="form-group">
+      <select class="form-control" [(ngModel)]="rooms" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+</div>
+<div class="col-sm-2">
+    <div class="form-group">
+      <select class="form-control" [(ngModel)]="guests" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+</div>
+<div class="col-sm-2">
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" (click)="searchDestination(destination,rooms,guests)">Search</button>
+    </div>
+</div>
+</div>
+
+</div>
+
+<div class="row">
+  <div class="column">
+      <img id="logo1" style="width:100%" src="http://acceleratecapetown.co.za/wp/wp-content/uploads/2014/08/111ROLL-918x400.jpg"/>
+          <div class="top-left">
+        <h1>Cape Town</h1>
+      </div>
+  </div>
+  <div class="column">
+      <img id="logo2" style="width:100%" src="http://www.safari.co.za/images/sunset-africa-camp-moremi.jpg"/>
+        <div class="top-left">
+      <h1>Kruger National Park</h1>
+    </div>
+  </div>
+  <div class="column">
+      <img id="logo3" style="width:100%" src="https://www.soweto.mahoonas.co.za/images/soweto.jpg"/>
+      <div class="top-left">
+          <h1>Gauteng</h1>
+      </div>
+  </div>
+  <div class="column">
+      <img id="logo4"  style="width:100%" src="http://www.tourismtattler.co.za/wp-content/images/Namaqua-National-Park.png"/>
+      <div class="top-left">
+          <h1>Namaqua National Park</h1>
+      </div>
+  </div>
+  </div>
+
+<app-home-footer></app-home-footer>
+
+                

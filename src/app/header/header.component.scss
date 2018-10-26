@@ -1,0 +1,206 @@
+div.a {
+    
+    right: 150px;    
+  
+}
+
+/* EXAMPLE STYLES
+-------------------------------*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+nav {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    
+    a {
+        margin-right: 8px;
+    }
+}
+
+h1 {
+    font-weight: normal;
+    margin-top: 0;
+}
+
+input[type="text"] {
+    display:block;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.credits {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+#logo
+{
+    height:10%;
+    width:15%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+
+
+/* MODAL STYLES
+-------------------------------*/
+jw-modal {
+    /* modals are hidden by default */
+    display: none;
+ 
+    .jw-modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+ 
+        /* z-index must be higher than .jw-modal-background */
+        z-index: 1000;
+         
+        /* enables scrolling for tall modals */
+        overflow: auto;
+ 
+        .jw-modal-body {
+            padding: 20px;
+            background: #fff;
+ 
+            /* margin exposes part of the modal background */
+            margin: 40px;
+        }
+    }
+ 
+    .jw-modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+ 
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+         
+        /* z-index must be below .jw-modal and above everything else  */
+        z-index: 900;
+    }
+}
+ 
+body.jw-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+
+//Login button
+.btn2 {
+    background-color: #0080ff	;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+btn2:hover {
+    opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=email], input[type=password], input[type=first_name],input[type=last_name],
+input[type=phone_number]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.alert {
+
+margin-left: 10%;
+margin-left: 10%;
+margin-top: 5%;
+
+
+}

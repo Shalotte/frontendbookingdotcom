@@ -25,20 +25,25 @@ processForm(){
 if(this.user.id==undefined){
 this._userService.createUser(this.user).subscribe((user)=>{
 console.log(user);
-this._router.navigate(['/']);
+this._router.navigate(['/listusers']);
 },(error)=>{
 console.log(error);
 });
 }
 
-else{
+else
+{
 this._userService.updateUser(this.user).subscribe((user)=>{
 console.log(user);
-this._router.navigate(['/']);
+this._router.navigate(['/listusers']);
 },(error)=>{
 console.log(error);
 });
 }
+
+
+this._userService.getUsers();
+this._router.navigate(['/listusers'])
 }
 
 }

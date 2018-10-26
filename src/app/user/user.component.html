@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+    />
+  </a>
+</nav>
+
+     
+
+<form (ngSubmit)="createUser()">
+ 
+    <div class="wrapper">
+    <legend>Create An Account</legend>
+
+    <div class="form-group">
+      <label for="username">First Name</label>
+      <input type="text" class="form-control" name="first_name"  [(ngModel)]="user.first_name">
+    </div>
+    <div class="col-10" *ngIf="userError?.first_name">
+      <span class="text text-danger">{{userError.first_name}}</span>
+    </div>
+
+    <div class="form-group">
+      <label for="last_namde">Last Name</label>
+      <input type="text" name="last_name" class="form-control"  [(ngModel)]="user.last_name">
+    </div>
+    <div class="col-10" *ngIf="userError?.last_name">
+        <span class="text text-danger">{{userError.last_name}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" class="form-control" [(ngModel)]="user.phone">
+    </div>
+    <div class="col-10" *ngIf="userError?.phone">
+        <span class="text text-danger">{{userError.phone}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="user.email">
+    </div>
+    <div class="col-10" *ngIf="userError?.email">
+        <span class="text text-danger">{{userError.email}}</span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+       <input type="password" class="form-control" name="password" [(ngModel)]="user.password">
+    </div>
+    <div class="col-10" *ngIf="userError?.password">
+        <span class="text text-danger">{{userError.password}}</span>
+    </div>
+
+      <button type="submit" value="createUser" class="btn btn-primary">Create Account</button>
+    </div>
+</form>

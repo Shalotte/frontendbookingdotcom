@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+    />
+  </a>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+  <ul class="nav navbar-nav navbar-right">
+          <div class="a">
+              <button type="button" class="btn btn-primary" routerLink="" style="margin-left:600px">Log Out</button>
+          </div>
+  </ul>
+
+  </div>
+</nav>
+<div class="jumbotron">
+<div class="row">
+<div class="column">
+    <input type="text" class="form-control" placeholder="Where are you going?">
+</div>
+<div class="column">
+    <input type="text"
+          class="form-control"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          #dp="bsDaterangepicker"
+          bsDaterangepicker  [bsConfig]="datePickerConfig"  [(bsValue)]="myDateValue" placeholder="Check-In - Check-Out"> 
+</div>
+<div class="column">
+  <div class="form-group">
+    <select class="form-control" id="exampleSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+</div>
+<div class="column">
+  <div class="form-group">
+    <select class="form-control" id="exampleSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+</div>
+<div class="column">
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="card">
+<div class="property">
+<h1>Villa Simone</h1>
+</div>
+<div class="image">
+   <img src="https://r-ec.bstatic.com/images/hotel/max1280x900/131/131858306.jpg" alt="Denim Jeans" style="width:100%">
+</div>
+<div class="a-lert">
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Risk free!!</strong> You can cancel later, <a href="#" class="alert-link"> so lock this great price today.</a>
+</div>
+</div>
+<input type="submit" value="Click here make a reservation" routerLink="/booking" class="btn">
+</div>
+
+<details></details>

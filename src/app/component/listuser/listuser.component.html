@@ -1,36 +1,54 @@
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      />
+    </a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="nav navbar-nav navbar-right">
+            <div class="a">
+                <button type="button" class="btn btn-primary" routerLink="" style="margin-left:600px">Log Out</button>
+            </div>
+    </ul>
+    </div>
+  </nav>
+
 <div class="container">
 <legend>User List</legend>
+<form class="form-inline"  (ngSubmit)="onSubmit()">
+  <input class="form-control" type="text" placeholder="Search" id="email" required [(ngModel)]="email" name="email" style="margin-left:800px">
+  <button class="btn btn-secondary my-2 my-sm-0">Search</button>
+</form>
 <div class="wrapper">
   <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Username</th>
-        <th scope="col">Password</th>
-        <th scope="col">Email Address</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
         <th scope="col">Phone No</th>
-        <th scope="col">Status</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
         <th scope="col">Type</th>
         <th scope="col">Delete</th>
         <th scope="col">Edit</th>
       </tr>
     </thead>
      <tbody>
-       <tr class ="table-primary" *ngFor="let user of users">
+       <tr class ="table-primary" *ngFor="let user of user">
          <td>{{user.id}}</td>
-         <td>{{user.username}}</td>
-         <td>{{user.password}}</td>
-         <td>{{user.email}}</td>
+         <td>{{user.first_name}}</td>
+         <td>{{user.last_name}}</td>
          <td>{{user.phone}}</td>
-         <td>{{user.status}}</td>
+         <td>{{user.email}}</td>
+         <td>{{user.password}}</td>
          <td>{{user.type}}</td>
-         <td><button type="button" class="btn btn-danger" (click)="deleteUser(user)" >Delete</button></td>
-         <td><button type="button" class="btn btn-success">Edit</button></td>
+         <td><button type="button" class="btn btn-danger" (click)="deleteUser(user)" onClick="window.location.reload" >Delete</button></td>
+         <td><button type="button" class="btn btn-success" (click)="updateUser(user)">Edit</button></td>
        </tr>
      </tbody>
   </table>
-  <button type="button" class="btn btn-success" (click)="newUser()">New User</button>
+  <button type="submit" class="btn btn-success" (click)="newUser()">New User</button>
   </div>
   </div>
 

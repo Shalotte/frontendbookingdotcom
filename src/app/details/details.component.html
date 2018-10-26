@@ -1,0 +1,88 @@
+<div class="a-lert">
+  <div class="alert alert-dismissible alert-success">
+    <strong>Great choice! You are almost done, {{user.first_name}}. </strong>
+  </div>
+  </div>
+  <form (ngSubmit)="createBooking()">
+      <div class="round3">
+        <div class="container">
+          <h2>Enter Your Details</h2>
+          <form action="/action_page.php">
+            <div class="form-group">
+                <label for="ctitle">Title</label>
+                <input type="text" class="form-control" id="ctitle"  name="ctitle" [(ngModel)]="customerDetails.title">
+                <div class="col-10" *ngIf="bookingError?.title">
+                    <span class="text text-danger">{{bookingError.title}}</span>
+                    </div>
+              </div>
+              <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" class="form-control" id="fname"  name="fname" [(ngModel)]="customerDetails.first_name">
+                  <div class="col-10" *ngIf="bookingError?.first_name">
+                      <span class="text text-danger">{{bookingError.first_name}}</span>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname"  name="lastname" [(ngModel)]="customerDetails.last_name">
+                    <div class="col-10" *ngIf="bookingError?.last_name">
+                        <span class="text text-danger">{{bookingError.last_name}}</span>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="phonenunmber">Phone Number</label>
+                      <input type="text" class="form-control" id="phonenumber" name="phonenumber" [(ngModel)]="customerDetails.telephone">
+                      <div class="col-10" *ngIf="bookingError?.telephone">
+                          <span class="text text-danger">{{bookingError.telephone}}</span>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email"  name="email" [(ngModel)]="customerDetails.email_address">
+                        <div class="col-10" *ngIf="bookingError?.email_address">
+                            <span class="text text-danger">{{bookingError.email_address}}</span>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="saddress">Street Address</label>
+                          <input type="text" class="form-control" id="address" name="saddress" [(ngModel)]="customerDetails.street_address">
+                          <div class="col-10" *ngIf="bookingError?.street_address">
+                              <span class="text text-danger">{{bookingError.street_address}}</span>
+                              </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="city">City</label>
+                          <input type="text" class="form-control" id="city" name="city" [(ngModel)]="customerDetails.city">
+                          <div class="col-10" *ngIf="bookingError?.city">
+                              <span class="text text-danger">{{bookingError.city}}</span>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text"  class="form-control" id="country" name="country" [(ngModel)]="customerDetails.country">
+                            <div class="col-10" *ngIf="bookingError?.country">
+                                <span class="text text-danger">{{bookingError.country}}</span>
+                                </div>
+                          </div>
+            <div class="form-group">
+              <label for="zipcode">Zip Code</label>
+              <input type="text" class="form-control" id="zipcode" name="zipcode" [(ngModel)]="customerDetails.zip_code">
+              <div class="col-10" *ngIf="bookingError?.zip_code">
+                  <span class="text text-danger">{{bookingError.zip_code}}</span>
+                  </div>
+            </div>
+          </form>
+        </div>
+        </div>
+        <div class="cbooking">
+            <input type="submit" value="continue booking" class="btn">
+          </div>
+      </form>
+
+ 
+  
+
+
+
+
+

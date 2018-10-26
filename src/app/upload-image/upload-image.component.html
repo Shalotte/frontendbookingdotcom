@@ -1,0 +1,12 @@
+
+<form #imageForm=ngForm (ngSubmit)="OnSubmit(Image)">
+<div class="container">
+<img [src]="imageUrl"  style= "width:250px; height:200px">
+<div class="form-group">
+    <input type="file"  (change)="handleFileInput($event.target.files)" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">Input an image of your property</small><div class="form-group">
+    </div>
+</div>
+
+</div>
+</form>

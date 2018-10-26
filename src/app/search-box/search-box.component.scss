@@ -1,0 +1,30 @@
+input{
+    display:block;
+    margin:20px;
+    width:50%;
+    text-transform: capitalize;
+}
+input[type='submit']{
+    width:40%;
+    background: #1976D2;
+}
+input[type='range']{
+    width:75%;
+}
+    ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-day-field:not([aria-valuenow]), {
+        color: transparent;
+}
+input[type="date"]::before { 
+	content: attr(data-placeholder);
+    width: 100%;
+    color:grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+#refine{
+margin:5px;
+color:white;
+}

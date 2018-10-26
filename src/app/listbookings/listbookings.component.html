@@ -1,0 +1,75 @@
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      /><button type="button" class="btn btn-primary">Accomodation</button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+            <div class="a">
+                <button type="button" class="btn btn-primary" routerLink="/custlayout">Home</button>
+                <button class="btn btn-primary" type="button" routerLink="/listpropertydisplay">Listed Property</button>
+                <button type="button" class="btn btn-primary" routerLink="/header_layout">Log Out</button>
+            </div>
+    </ul>
+  
+    </div>
+  </nav>
+  
+  
+    <div class="container">
+        <h2>Your Bookings List</h2>
+        <p>Hey {{user.first_name}}, below are all the bookings you have made!</p>    
+        <div class="table-responsive">                                                                                        
+        <table class="table">
+          <thead >
+            <tr class="bg-primary">
+              <th>id</th>
+              <th>Title</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email Address</th>
+              <th>Street Address</th>
+              <th>City</th>
+              <th>Zip Code</th>
+              <th>Country</th>
+              <th>Telephone</th>
+              <th>Card Holder Name</th>
+              <th>Card Type</th>
+              <th>Card Number</th>
+              <th>Expiry Date</th>
+              <th>cvc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let properties of properties">
+              <td>{{properties.id}}</td>
+              <td>{{properties.property_name}}</td>
+              <td>{{properties.property_manager_name}}</td>
+              <td>{{properties.property_manager_contact_details}}</td>
+              <td>{{properties.property_street_address}}</td>
+              <td>{{properties.property_city_name}}</td>
+              <td>{{properties.property_country_name}}</td>
+              <td>{{properties.zip_code}}</td>
+              <td>{{properties.email}}</td>
+              <td>{{properties.apartment_type}}</td>
+              <td>{{properties.number_of_bedrooms}}</td>
+              <td>{{properties.number_of_living_rooms}}</td>
+              <td>{{properties.number_of_bathrooms}}</td>
+              <td>{{properties.price_per_night}}</td>
+              <td>{{properties.internet_available}}</td>
+              <td>{{properties.free_internet}}</td>
+              <td>{{properties.parking_available}}</td>
+              <td>{{properties.language_spoken}}</td>
+              <td>{{properties.smoking_allowed}}</td>
+              <td>{{properties.children_accommodated}}</td>
+              <td>{{properties.spets_allowed}}</td>
+              <td>{{properties.minimum_stay}}</td>
+              <td>{{properties.payment_method}}</td>
+              <td>{{properties.cleaning_fees}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>

@@ -1,0 +1,86 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+        <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+        />
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+        <button class="btn btn-primary" type="button" routerLink="/listproperty">List Property</button>
+        <div class="dropdown">
+            <button class="btn btn-primary" type="button">My Account</button>
+               <ul class="dropdown-content">
+               <a href="#" routerLink="/userprofile">Profile</a>
+               <a href="#"  routerLink="/listbooking">View Bookings</a>
+               <a href="#" routerLink='/listpropertydisplay'>Listed Property</a>
+               </ul>
+         </div>
+         <button class="btn btn-primary" type="button" routerLink='/custlayout'>Home</button>
+         <button class="btn btn-primary" type="button" routerLink=''>Log Out</button>
+    </div>
+  </nav>
+
+  <form (ngSubmit)="createPayment()">
+<div class="round3">
+  <div class="container">
+    <h2>Payment</h2>
+    <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+    <form action="/action_page.php" >
+      <div class="form-group">
+        <label for="cname">Card Holder Name</label>
+        <input type="text" id="cname" class="form-control" name="cardname" [(ngModel)]="payment.card_holder_name">
+        <div class="col-10" *ngIf="paymentError?.card_holder_name">
+            <span class="text text-danger">{{paymentError.card_holder_name}}</span>
+            </div>
+      </div>
+      <div class="form-group">
+        <label for="ccnum">Card Type</label>
+        <input type="text" id="ctype" class="form-control" name="cardtype" [(ngModel)]="payment.card_type">
+        <div class="col-10" *ngIf="paymentError?.card_type">
+            <span class="text text-danger">{{paymentError.card_type}}</span>
+            </div>
+      </div>
+      <div class="form-group">
+          <label for="ccnum">Card Number</label>
+          <input type="text" id="cnumber" class="form-control" name="cardtype" [(ngModel)]="payment.card_number">
+          <div class="col-10" *ngIf="paymentError?.card_number">
+              <span class="text text-danger">{{paymentError.card_number}}</span>
+              </div>
+        </div>
+      <div class="form-group">
+          <label for="expmonth">Card Expiry Date</label>
+        <input type="text" id="ccnum" class="form-control" name="cardnumber" [(ngModel)]="payment.expiry_date"> 
+        <div class="col-10" *ngIf="paymentError?.expiry_date">
+            <span class="text text-danger">{{paymentError.expiry_date}}</span>
+            </div>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" class="form-control" name="cvv" [(ngModel)]="payment.cvc">
+        <div class="col-10" *ngIf="paymentError?.cvc">
+            <span class="text text-danger">{{paymentError.cvc}}</span>
+            </div>
+      </div>
+    </form>
+    
+  </div>
+  </div>
+
+  <div class="cbooking">
+  <input type="submit"  value="Complete Booking" class="putton">
+  </div>
+  </form>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+

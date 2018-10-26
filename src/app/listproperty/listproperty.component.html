@@ -1,0 +1,188 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      />
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+      <div class="dropdown">
+          <button class="btn btn-primary" type="button">Manage Account</button>
+             <ul class="dropdown-content">
+             <a href="#"  routerLink="/listbooking">View Bookings</a>
+             <a href="#" routerLink='/listpropertydisplay'>Listed Property</a>
+             </ul>
+       </div>
+       <button class="btn btn-primary" type="button" routerLink="/custlayout">Home</button>
+       <button class="btn btn-primary" type="button" routerLink='/header_layout'>Log Out</button>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h3>Welcome {{user.first_name}}, you can list your property below!</h3>
+</div>
+
+<form (ngSubmit)="processProperty()">
+<div class="round3">
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="form-group">
+          <h2>What is the name of your property?</h2>
+          <label for="cname">Property Name</label>
+          <input type="text" id="proprty_name" class="form-control" name="property_name" [(ngModel)]="listproperty.property_name" >
+          <div class="col-10" *ngIf="listpError?.property_name">
+            <span class="text text-danger">{{listpError.property_name}}</span>
+            </div>
+          <small class="form-text text-muted">This name will be seen by guests when they search for a place to stay.</small>
+        </div>
+      </form>
+      
+    </div>
+    </div>  
+
+    <div class="round3">
+        <div class="container">
+          <form action="/action_page.php">
+            <div class="form-group">
+              <h2>What are the contact details of this property?</h2>
+              <label for="cname">Contact Name</label>
+              <input type="text" class="form-control"  name="property_manager_name" [(ngModel)]="listproperty.property_manager_name" >
+              <div class="col-10" *ngIf="listpError?.property_manager_name">
+                <span class="text text-danger">{{listpError.property_manager_name}}</span>
+                </div>
+              <label for="cname">Contact Number</label>
+              <input type="text" class="form-control" name="property_manager_contact_details" [(ngModel)]="listproperty.property_manager_contact_details" >
+              <div class="col-10" *ngIf="listpError?.property_manager_contact_details">
+                <span class="text text-danger">{{listpError.property_manager_contact_details}}</span>
+                </div>
+              <label for="cname">Property Email</label>
+              <input type="text" class="form-control" name="email" [(ngModel)]="listproperty.email" >
+              <div class="col-10" *ngIf="listpError?.email">
+                <span class="text text-danger">{{listpError.email}}</span>
+                </div>
+            </div>
+          </form>
+      </div>
+  </div>
+     
+  <div class="round3">
+      <div class="container">
+        <form action="/action_page.php">
+          <div class="form-group">
+            <h2>Where is your property located?</h2>
+            <label for="cname">Street address</label>
+            <input type="text" class="form-control" name="property_street_address"  [(ngModel)]="listproperty.property_street_address" >
+            <div class="col-10" *ngIf="listpError?.property_street_address">
+              <span class="text text-danger">{{listpError.property_street_address}}</span>
+              </div>
+            <label for="cname">City</label>
+            <input type="text" class="form-control" name="property_city_name" [(ngModel)]="listproperty.property_city_name">
+            <div class="col-10" *ngIf="listpError?.property_city_name">
+              <span class="text text-danger">{{listpError.property_city_name}}</span>
+              </div>
+            <label for="cname">Country</label>
+            <input type="text" class="form-control" name="property_country_name" [(ngModel)]="listproperty.property_country_name"  >
+            <div class="col-10" *ngIf="listpError?.property_country_name">
+              <span class="text text-danger">{{listpError.property_country_name}}</span>
+              </div>
+            <label for="cname">Zip Code</label>
+            <input type="text" class="form-control" name="zip_code"  [(ngModel)]="listproperty.zip_code" >
+            <div class="col-10" *ngIf="listpError?.zip_code">
+              <span class="text text-danger">{{listpError.zip_code}}</span>
+              </div>
+          </div>
+        </form>
+    </div>
+  </div>
+<div class="round3">
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="form-group">
+          <h2>Layout and Pricing</h2>
+          <label for="ptype">Property Type</label>
+          <input type="text" class="form-control" name="apartment_type"   [(ngModel)]="listproperty.apartment_type" >
+          <div class="col-10" *ngIf="listpError?.apartment_type">
+            <span class="text text-danger">{{listpError.apartment_type}}</span>
+            </div>
+          <small class="form-text text-muted">Give a brief description of your property e.g. Apartment with Balcony.</small>
+          <label for="no_living">Number of Bedrooms</label>
+          <input type="text" class="form-control"  name="number_of_bedrooms"   [(ngModel)]="listproperty.number_of_bedrooms">
+          <div class="col-10" *ngIf="listpError?.number_of_bedrooms">
+            <span class="text text-danger">{{listpError.number_of_bedrooms}}</span>
+            </div>
+          <label for="no_living">Number of Living Rooms</label>
+          <input type="text" class="form-control"  name="number_of_living_rooms"   [(ngModel)]="listproperty.number_of_living_rooms">
+          <div class="col-10" *ngIf="listpError?.number_of_living_rooms">
+            <span class="text text-danger">{{listpError.number_of_living_rooms}}</span>
+            </div>
+          <label for="no_bathrooms">Number of Bathrooms</label>
+          <input type="text" class="form-control" name="number_of_bathrooms"  [(ngModel)]="listproperty.number_of_bathrooms">
+          <div class="col-10" *ngIf="listpError?.number_of_bathrooms">
+            <span class="text text-danger">{{listpError.number_of_bathrooms}}</span>
+            </div>
+          <label for="price_night">Price Per Night</label>
+          <input type="text" class="form-control" name="price_per_night"  [(ngModel)]="listproperty.price_per_night" >
+          <div class="col-10" *ngIf="listpError?.price_per_night">
+            <span class="text text-danger">{{listpError.price_per_night}}</span>
+            </div>
+          <label for="internet_available">Internet Available</label>
+          <input type="text" class="form-control" name="internet_available"   [(ngModel)]="listproperty.internet_available" >
+          <div class="col-10" *ngIf="listpError?.internet_available">
+            <span class="text text-danger">{{listpError.internet_available}}</span>
+            </div>
+          <label for="free_internet">Free Internet</label>
+          <input type="text" class="form-control"  name="free_internet"  [(ngModel)]="listproperty.free_internet" >
+          <div class="col-10" *ngIf="listpError?.free_internet">
+            <span class="text text-danger">{{listpError.free_internet}}</span>
+            </div>
+          <label for="parking_available">Parking Available</label>
+          <input type="text" class="form-control" name="parking_available"   [(ngModel)]="listproperty.parking_available">
+          <div class="col-10" *ngIf="listpError?.parking_available">
+            <span class="text text-danger">{{listpError.parking_available}}</span>
+            </div>
+          <label for="parking_available">Language Spoken</label>
+          <input type="text" class="form-control" name="language_spoken"  [(ngModel)]="listproperty.language_spoken" >
+          <div class="col-10" *ngIf="listpError?.language_spoken">
+            <span class="text text-danger">{{listpError.language_spoken}}</span>
+            </div>
+          <label for="smoking_allowed">Smoking Allowed</label>
+          <input type="text" class="form-control"  name="smoking_allowed"   [(ngModel)]="listproperty.smoking_allowed" >
+          <div class="col-10" *ngIf="listpError?.smoking_allowed">
+            <span class="text text-danger">{{listpError.smoking_allowed}}</span>
+            </div>
+          <label for="children_accommodated">Children Accommodated</label>
+          <input type="text" class="form-control" name="children_accommodated"   [(ngModel)]="listproperty.children_accommodated">
+          <div class="col-10" *ngIf="listpError?.children_accommodated">
+            <span class="text text-danger">{{listpError.children_accommodated}}</span>
+            </div>
+          <label for="minimum_stay">Minimium Stay</label>
+          <input type="text" class="form-control" name="minimum_stay" [(ngModel)]="listproperty.minimum_stay">
+          <div class="col-10" *ngIf="listpError?.minimum_stay">
+            <span class="text text-danger">{{listpError.minimum_stay}}</span>
+            </div>
+          <label for="payment_method">Payment Method</label>
+          <input type="text" class="form-control"  name="payment_method"  [(ngModel)]="listproperty.payment_method" >
+          <div class="col-10" *ngIf="listpError?.payment_method">
+            <span class="text text-danger">{{listpError.payment_method}}</span>
+            </div>
+          <label for="payment_method">Cleaning Fees</label>
+          <input type="text" class="form-control" name="cleaning_fees" [(ngModel)]="listproperty.cleaning_fees">
+          <div class="col-10" *ngIf="listpError?.cleaning_fees">
+            <span class="text text-danger">{{listpError.cleaning_fees}}</span>
+            </div>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="cbooking">
+    <input type="submit" value="Complete Property Listing" class="tn">
+</div>
+</form>
+  
+

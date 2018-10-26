@@ -1,0 +1,94 @@
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+    /><button type="button" class="btn btn-primary">Accomodation</button>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+  <ul class="navbar-nav mr-auto">
+  </ul>
+  <div class="dropdown">
+    <button class="btn btn-primary" type="button">Manage Account</button>
+       <ul class="dropdown-content">
+       <a href="#"  routerLink="/listbooking">View Bookings</a>
+       </ul>
+ </div>
+  <ul class="nav navbar-nav navbar-right">
+          <div class="a"> 
+              <button type="button" class="btn btn-primary" routerLink="/custlayout">Home</button>
+              <button type="button" class="btn btn-primary" routerLink="/header_layout">Log Out</button>
+          </div>
+  </ul>
+
+  </div>
+</nav>
+
+
+  <div class="container">
+      <h2>Your Property List</h2>
+      <p>Hey {{user.first_name}}, below are all the properties you have listed!</p>    
+      <div class="table-responsive">                                                                                        
+      <table class="table">
+        <thead >
+          <tr class="bg-primary">
+            <th>id</th>
+            <th>Property Name</th>
+            <th>Property Manager Name</th>
+            <th>Property Manager Contact Details</th>
+            <th>Property Street Address</th>
+            <th>Property City Name</th>
+            <th>Property Country Name</th>
+            <th>Zip Code</th>
+            <th>Email</th>
+            <th>Apartment Type</th>
+            <th>Number Of Bedrooms</th>
+            <th>Number Of Living Rooms</th>
+            <th>Number Of Bathrooms</th>
+            <th>Price Per Night</th>
+            <th>Internet Available</th>
+            <th>Free Internet</th>
+            <th>Parking Available</th>
+            <th>Language Spoken</th>
+            <th>Smoking Allowed</th>
+             <th>Children Accommodated</th>
+            <th>Minimum Stay</th>
+            <th>Payment Method</th>
+            <th>Cleaning Fees</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let properties of properties">
+            <td>{{properties.id}}</td>
+            <td>{{properties.property_name}}</td>
+            <td>{{properties.property_manager_name}}</td>
+            <td>{{properties.property_manager_contact_details}}</td>
+            <td>{{properties.property_street_address}}</td>
+            <td>{{properties.property_city_name}}</td>
+            <td>{{properties.property_country_name}}</td>
+            <td>{{properties.zip_code}}</td>
+            <td>{{properties.email}}</td>
+            <td>{{properties.apartment_type}}</td>
+            <td>{{properties.number_of_bedrooms}}</td>
+            <td>{{properties.number_of_living_rooms}}</td>
+            <td>{{properties.number_of_bathrooms}}</td>
+            <td>{{properties.price_per_night}}</td>
+            <td>{{properties.internet_available}}</td>
+            <td>{{properties.free_internet}}</td>
+            <td>{{properties.parking_available}}</td>
+            <td>{{properties.language_spoken}}</td>
+            <td>{{properties.smoking_allowed}}</td>
+            <td>{{properties.children_accommodated}}</td>
+            <td>{{properties.minimum_stay}}</td>
+            <td>{{properties.payment_method}}</td>
+            <td>{{properties.cleaning_fees}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteProperty(properties)" onClick="window.location.reload">Delete</button></td>
+            <td><button type="button" class="btn btn-success" (click)="updateProperty(property)">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <button type="submit" class="btn btn-success" routerLink='/listproperty'>New Property</button>
+  
+  

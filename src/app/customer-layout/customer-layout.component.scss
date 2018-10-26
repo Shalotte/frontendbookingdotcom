@@ -1,0 +1,201 @@
+
+#logo1
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo2
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo3
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo4
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+   
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+#logo1
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo2
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo3
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo4
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.column:hover #logo1
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo2
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo3
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo4
+{
+ transform: scale(1.06);
+}
+
+.column {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
