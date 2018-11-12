@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      /><button type="button" class="btn btn-primary">Accomodation</button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+            <div class="a">
+                <button class="btn btn-primary" type="button" routerLink="/admin">Home</button>
+                <div class="dropdown">
+                    <button class="btn btn-primary" type="button" >Manage Account</button>
+                       <ul class="dropdown-content">
+                       <a href="#" routerLink="/managebookings">Manage Bookings</a>
+                       <a href="#" routerLink="/listusers">Manage Users</a>
+                       <a href="#" routerLink="/managepayments">Manage Payments</a>
+                       </ul>
+                 </div>
+                <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
+            </div>
+    </ul>
+  
+    </div>
+  </nav>
+
+  
+  <div class="container">
+      <h2>Listed Properties</h2>   
+      <p>Below are all the properties users have listed.</p>   
+      <div class="table-responsive">                                                                                        
+      <table class="table">
+        <thead >
+          <tr class="bg-primary">
+            <th>id</th>
+            <th>Property Name</th>
+            <th>Property Manager Name</th>
+            <th>Property Manager Contact Details</th>
+            <th>Property Street Address</th>
+            <th>Property City Name</th>
+            <th>Property Country Name</th>
+            <th>Zip Code</th>
+            <th>Email</th>
+            <th>Apartment Type</th>
+            <th>Number Of Bedrooms</th>
+            <th>Number Of Living Rooms</th>
+            <th>Number Of Bathrooms</th>
+            <th>Price Per Night</th>
+            <th>Internet Available</th>
+            <th>Free Internet</th>
+            <th>Parking Available</th>
+            <th>Language Spoken</th>
+            <th>Smoking Allowed</th>
+             <th>Children Accommodated</th>
+            <th>Minimum Stay</th>
+            <th>Payment Method</th>
+            <th>Cleaning Fees</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listproperty of listproperty">
+            <td>{{listproperty.id}}</td>
+            <td>{{listproperty.property_name}}</td>
+            <td>{{listproperty.property_manager_name}}</td>
+            <td>{{listproperty.property_manager_contact_details}}</td>
+            <td>{{listproperty.property_street_address}}</td>
+            <td>{{listproperty.property_city_name}}</td>
+            <td>{{listproperty.property_country_name}}</td>
+            <td>{{listproperty.zip_code}}</td>
+            <td>{{listproperty.email}}</td>
+            <td>{{listproperty.apartment_type}}</td>
+            <td>{{listproperty.number_of_bedrooms}}</td>
+            <td>{{listproperty.number_of_living_rooms}}</td>
+            <td>{{listproperty.number_of_bathrooms}}</td>
+            <td>{{listproperty.price_per_night}}</td>
+            <td>{{listproperty.internet_available}}</td>
+            <td>{{listproperty.free_internet}}</td>
+            <td>{{listproperty.parking_available}}</td>
+            <td>{{listproperty.language_spoken}}</td>
+            <td>{{listproperty.smoking_allowed}}</td>
+            <td>{{listproperty.children_accommodated}}</td>
+            <td>{{listproperty.minimum_stay}}</td>
+            <td>{{listproperty.payment_method}}</td>
+            <td>{{listproperty.cleaning_fees}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteProperty(listproperty)" onClick="window.location.reload">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      

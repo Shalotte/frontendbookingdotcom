@@ -4,7 +4,6 @@ import {User} from '../user';
 import {Router} from '@angular/router';
 import { ModalService} from '../modal.service';
 import { FormBuilder, FormControl,FormGroup, Validators } from '../../../node_modules/@angular/forms';
-import { AlertService} from '../shared_services/alert.service';
 
 
 
@@ -30,7 +29,9 @@ import { AlertService} from '../shared_services/alert.service';
   loginForm: FormGroup;
   formdata;
 
-  constructor(private modalService: ModalService , private alertService: AlertService,private _userService: UserService, private _router: Router, private formBuilder: FormBuilder) { }
+  constructor(private modalService: ModalService ,
+  private _userService: UserService, private _router: Router,
+  private formBuilder: FormBuilder) { }
 
   ngOnInit() { 
   this.email;
@@ -56,8 +57,9 @@ import { AlertService} from '../shared_services/alert.service';
   this.userError= new User();
 
   if(this.isCreated=true){
-  alert('Your registration was successful, you can now login.')
+  alert('Your registration was successful, you can now login.');
   this._router.navigate(['header_layout']);
+  location.reload();
   }
    
   }
@@ -94,11 +96,13 @@ import { AlertService} from '../shared_services/alert.service';
   console.log(user);
  
  }
- ,error =>{this.alertService.error(error);
+ ,error =>{
  this.loading = false;
  console.log(error);
  if(error){
-  alert('Invalid login, please create account!')
+  alert('Invalid login, please register to create account!')
+  this._router.navigate(['/header_layout']);
+  location.reload();
 }
 }, 
  () => this.loginauth());
@@ -110,17 +114,17 @@ import { AlertService} from '../shared_services/alert.service';
  localStorage.setItem('user', JSON.stringify(this.user));
  if (this.user.email && this.user.password && this.user.type=='admin'){
  alert('Login Successful.')
- this._router.navigate(['/header_layout']);
+ this._router.navigate(['/admin']);
  }
-  
  if (this.user.email && this.user.password && this.user.type=='customer'){
  alert('Login Successful.') 
  this._router.navigate(['/custlayout']);
  } 
- else{
- alert("Invalid Login")
- this.submitted = false;
+
+ if(!this.user.email && !this.user.password){
+ alert('Invalid Login') 
  }
+
  }
 
  openModal(id: string) {

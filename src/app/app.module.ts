@@ -7,48 +7,38 @@ import { ReactiveFormsModule }    from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import {RegistrationFormComponent} from './registration-form/registration-form.component';
 import { ListuserComponent } from './component/listuser/listuser.component';
 import { UserformComponent } from './component/userform/userform.component';
 import {UserService } from './shared_services/user.service';
 import {MservicesService  } from './shared_services/mservices.service';
 import {FormsModule} from '@angular/forms';
 import { HeaderLayoutComponent } from './header-layout/header-layout.component';
-import { LoginComponent } from './login/login.component';
 import { ListpropertyComponent } from './listproperty/listproperty.component';
 import { CustomerLayoutComponent } from './customer-layout/customer-layout.component';
 import { CustomerHeaderComponent } from './customer-header/customer-header.component';
 import { HomeFooterComponent } from './home-footer/home-footer.component';
 import {DatepickerModule, BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-import { AlertComponent } from './alert/alert.component';
-import { CustlayoutimagesComponent } from './custlayoutimages/custlayoutimages.component';
-import { FormUploadComponent } from './upload/form-upload/form-upload.component';
-import { ListUploadComponent } from './upload/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
-import { FilelayoutComponent } from './upload/filelayout/filelayout.component';
-import { DestinationsComponent } from './destinations/destinations.component';
 import { BookingComponent } from './booking/booking.component';
 import { PaymentComponent } from './payment/payment.component';
-import { DetailsComponent } from './details/details.component';
-import { AddressComponent } from './address/address.component';
-import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
-import { UploadImageComponent } from './upload-image/upload-image.component';
-import { AdminProfileComponent } from './admin-profile/admin-profile.component';
-import { UserComponent } from './user/user.component';
-import {User1Service} from './user1.service';
 import { ModalComponent } from './modal/modal.component';
 import {ModalService} from './modal.service';
-import { UserPropertyComponent } from './user-property/user-property.component';
 import { ListpropertydisplayComponent } from './listpropertydisplay/listpropertydisplay.component';
-import { ProfileComponent } from './profile/profile.component';
 import { ListbookingsComponent } from './listbookings/listbookings.component';
 import { FoundDestinationsComponent } from './found-destinations/found-destinations.component';
-import { ListdestinationsComponent } from './listdestinations/listdestinations.component';
-import { DestinationService } from './shared_services/destination.service';
 import { BookingService } from './shared_services/booking.service';
-import { SearchBoxComponent } from './search-box/search-box.component';
-import { AccomodationCardComponent } from './accomodation-card/accomodation-card.component';
 import { PaymentService } from './shared_services/payment.service';
+import { UpdatePropertyComponent } from './update-property/update-property.component';
+import { PaymentdisplayComponent } from './paymentdisplay/paymentdisplay.component';
+import { ManagebookingsComponent } from './Managebookings/Managebookings.component';
+import { ManagepaymentsComponent } from './Managepayments/Managepayments.component';
+import { ManagepropertiesComponent } from './Manageproperties/Manageproperties.component';
+import { AdminService } from './shared_services/Admin.service';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdmincomponentComponent } from './admincomponent/admincomponent.component';
+import { HomesearchComponent } from './homesearch/homesearch.component';
+import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
+
  
 
 const appRoutes:Routes=[
@@ -64,29 +54,24 @@ const appRoutes:Routes=[
 
   
   {path:'userform',component:UserformComponent },
-  {path:'registration',component:RegistrationFormComponent},
   {path:'listusers',component:ListuserComponent},
-  {path:'login',component:LoginComponent},
   {path:'listproperty',component:ListpropertyComponent },
   {path:'custlayout',component:CustomerLayoutComponent },
-  {path:'filelayout',component:FilelayoutComponent },
   {path:'booking',component:BookingComponent  },
-  {path:'destinations',component:DestinationsComponent },
-  {path:'booking',component:BookingComponent  },
-  {path:'destinations',component:DestinationsComponent },
-  {path:'imageupload',component:UploadImageComponent },
-  {path:'user1',component:UserComponent },
   {path:'header_layout',component:HeaderLayoutComponent },
   {path: 'listpropertydisplay',component:ListpropertydisplayComponent},
-  {path: 'userprofile',component:ProfileComponent},
   {path: 'listbooking',component:ListbookingsComponent},
   {path: 'foundProperty',component:FoundDestinationsComponent},
-  {path: 'searchbox',component:SearchBoxComponent},
   {path: 'payment',component:PaymentComponent},
- 
-
-  
-
+  {path: 'update_property',component:UpdatePropertyComponent},
+  {path: 'payment_display',component:PaymentdisplayComponent},
+  {path: 'managebookings',component:ManagebookingsComponent},
+  {path: 'managepayments',component:ManagepaymentsComponent},
+  {path: 'manageproperties',component:ManagepropertiesComponent},
+  {path: 'forgotpassword',component:ForgotpasswordComponent},
+  {path: 'admin',component:AdmincomponentComponent},
+  {path: 'homesearch',component:HomesearchComponent},
+  {path: 'adminhome',component:AdminregistrationComponent},
 
 ]
 
@@ -95,39 +80,28 @@ const appRoutes:Routes=[
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    RegistrationFormComponent,
     ListuserComponent,
     UserformComponent,
     HeaderLayoutComponent,
-    LoginComponent,
     ListpropertyComponent,
     CustomerLayoutComponent,
     CustomerHeaderComponent,
     HomeFooterComponent,
-    AlertComponent,
-    CustlayoutimagesComponent,
-    FormUploadComponent,
-    ListUploadComponent,
-    DetailsUploadComponent,
-    FilelayoutComponent,
-    DestinationsComponent,
     BookingComponent,
     PaymentComponent,
-    DetailsComponent,
-    AddressComponent,
-    CustomerProfileComponent,
-    UploadImageComponent,
-    AdminProfileComponent,
-    UserComponent,
     ModalComponent,
-    UserPropertyComponent,
     ListpropertydisplayComponent,
-    ProfileComponent,
     ListbookingsComponent,
     FoundDestinationsComponent,
-    ListdestinationsComponent,
-    SearchBoxComponent,
-    AccomodationCardComponent,
+    UpdatePropertyComponent,
+    PaymentdisplayComponent,
+    ManagebookingsComponent,
+    ManagepaymentsComponent,
+    ManagepropertiesComponent,
+    ForgotpasswordComponent,
+    AdmincomponentComponent,
+    HomesearchComponent,
+    AdminregistrationComponent,
     
   ],
 
@@ -138,10 +112,12 @@ const appRoutes:Routes=[
     FormsModule,
     RouterModule.forRoot(appRoutes),BsDatepickerModule.forRoot(), DatepickerModule.forRoot() ,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   
-  providers: [UserService, MservicesService, User1Service, ModalService,DestinationService,BookingService, PaymentService ],
+  providers: [UserService, MservicesService, ModalService
+    ,BookingService, PaymentService, AdminService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -59,14 +59,14 @@
         </div>
       <div class="form-group">
           <label for="expmonth">Card Expiry Date</label>
-        <input type="text" id="ccnum" class="form-control" name="cardnumber" [(ngModel)]="payment.expiry_date"> 
+        <input type="month" id="ccnum" class="form-control" min="2018-11" name="expiry date" [(ngModel)]="payment.expiry_date"> 
         <div class="col-10" *ngIf="paymentError?.expiry_date">
             <span class="text text-danger">{{paymentError.expiry_date}}</span>
             </div>
       </div>
       <div class="form-group">
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" class="form-control" name="cvv" [(ngModel)]="payment.cvc">
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" class="form-control" name="cvc" [(ngModel)]="payment.cvc">
         <div class="col-10" *ngIf="paymentError?.cvc">
             <span class="text text-danger">{{paymentError.cvc}}</span>
             </div>

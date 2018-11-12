@@ -54,17 +54,14 @@ searchUser(email: String){
   return this._http.get(this.baseUrl+'/users/'+email, this.options).pipe(map((response: any) => response.json()));
 }
 
-/*login(email: string, password: string)  { 
-  return this._http1.get(this.baseUrl+'/users/login/'+ email +'/'+ password, this.httpheader);
-  
-  }*/
-
-
 login(email: string, password: string)  { 
 return this._http.get(this.baseUrl+'/users/login/'+ email +'/'+ password, this.options).pipe(map((response: any) => response.json()));
 
 }
 
+forgotPassword(email:string){
+  return this._http.get(this.baseUrl+'/users/forgetpassword/'+email,this.options).pipe(map((response: any) => response.json()))
+}
 
 setter(user:User){
   this.user = user;
@@ -73,7 +70,12 @@ setter(user:User){
 getter(){
 return this.user;
 }
-  }
+
+logout(){
+  localStorage.clear()
+}
+
+}
 
 
  

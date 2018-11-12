@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
-import { first } from 'rxjs/operators';
 import {User} from '../user';
 import {Listproperty} from '../listproperty';
-import { Destination } from '../destination';
-import { DestinationService } from '../shared_services/destination.service';
+import { ListpropertyService } from '../shared_services/listproperty.service';
 import { Router } from '../../../node_modules/@angular/router';
-import { isNull } from '../../../node_modules/@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-customer-layout',
@@ -19,43 +16,40 @@ export class CustomerLayoutComponent implements OnInit {
   user: User;
  
  
-  private destination:Destination;
+private listproperty:Listproperty;
 
-  constructor(private _destination:DestinationService,private router:Router) {
-      this.user = JSON.parse(localStorage.getItem('user'));
-      this.datePickerConfig = Object.assign({},{containerClass: 'theme-dark-blue'});
-  }
+constructor(private _listpropertyService:ListpropertyService,
+private router:Router) {
+this.user = JSON.parse(localStorage.getItem('user'));
+this.datePickerConfig = Object.assign({},{containerClass: 'theme-dark-blue'});
+}
 
-  
-  ngOnInit() {}
+ngOnInit() {
+if(this.user==null){
+alert('You are not logged in, please log in!');
+this.router.navigate(['/header_layout'])
+location.reload();
+}
+}
 
-  searchDestination(destination:string, rooms:number,guests:number){
-
-    console.log("Inputs==",destination, rooms,guests);
-      this._destination.search_Destination(destination,rooms,guests).subscribe(results=>
-        { this.destination = results;
-          console.log("search results++",this.destination);
-          this._destination.saveResults(this.destination);
+searchDestination(destination:string, rooms:number,guests:number){
+console.log("Inputs==",destination, rooms,guests);
+this._listpropertyService.search_Destination(destination,rooms,guests).subscribe(results=>
+{ this.listproperty = results;
+console.log("search results++",this.listproperty);
+this._listpropertyService.saveResults(this.listproperty);
           
-          if(Object.keys(this.destination).length==0){
-            alert('Oops destination not found!!');
-            this.router.navigate(['/custlayout'])
-            
-          } 
-          if(Object.keys(this.destination).length>0){this.router.navigate(['/foundProperty']);}
-       
-        });
-      
-    }
+if(Object.keys(this.listproperty).length==0){
+alert('Oops property to book in this range not found!!');
+this.router.navigate(['/custlayout']) 
+} 
+if(Object.keys(this.listproperty).length>0){this.router.navigate(['/foundProperty']);}
+});
+}
 
-  onDateChange(newDate: Date) {
-    console.log(newDate);
-  }
-
-
-  
-  
-    
+onDateChange(newDate: Date) {
+console.log(newDate);
+}
 
 }
 

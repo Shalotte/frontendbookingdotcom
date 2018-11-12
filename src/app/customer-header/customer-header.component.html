@@ -12,11 +12,12 @@
                   <div class="dropdown">
                       <button class="btn btn-primary" type="button">Manage Account</button>
                          <ul class="dropdown-content">
-                         <a href="#" routerLink="/listbooking">Bookings</a>
                          <a href="#" routerLink="/listpropertydisplay">Listed Properties</a>
+                         <a href="#" routerLink="/listbooking">View Bookings</a>
+                         <a href="#" routerLink="/payment_display">View Payments</a>
                          </ul>
                    </div>
-                  <button type="button" class="btn btn-primary" routerLink="/header_layout">Log Out</button>
+                  <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
               </div>
       </ul>
     

@@ -1,18 +1,23 @@
 <app-customer-header></app-customer-header>
 
-<div *ngFor="let destinations of destinations; let i=index">
+<div *ngFor="let listproperty of listproperty; let i=index">
 <div class="flightCards">
     <div class="onwardDetails">
-      <h1>{{destinations.guest_house_name}}</h1>
-      <h4><strong>Number of guests:</strong>{{destinations.guests}} or more</h4>
-      <h4><strong>Available rooms:</strong>{{destinations.rooms}}</h4>
-      <h4><strong>Property manager:</strong>{{destinations.manager_name}}</h4>
-      <h4><strong>Contact details:</strong>{{destinations.contact_details}}</h4>
+      <h1>{{listproperty.property_name}}</h1>
+      <h2><strong>R{{listproperty.price_per_night}}</strong></h2>
+      <h4><strong>Maximum number of guests per bedroom:</strong>{{listproperty.guests}}</h4>
+      <h4><strong>Minimum rooms available:</strong>{{listproperty.number_of_bedrooms}}</h4>
+      <h4><strong>Property Manager:</strong>{{listproperty.property_manager_name}}</h4>
+      <h4><strong>Contact Details:</strong>{{listproperty.property_manager_contact_details}}</h4>
+      <p class="text-danger"><strong>In High Demand!!!</strong></p>
+<p class="text-success"><strong>Risk free you can cancel later, so lock in this great price!!!</strong></p>
     </div>
     <div class="booking">
-      <img class="bookingImage"  [src]="images[i]" height="150" width="150">
-      <button routerLink='/booking'>Make Reservation</button>
+      <img class="bookingImage"  src="data:image/JPEG;base64,{{listproperty.pic}}" height="250" width="250">
+      <div>
+          <button routerLink='/booking'>Make Reservation</button>
+      </div>
     </div>
-
+ 
     </div>
 

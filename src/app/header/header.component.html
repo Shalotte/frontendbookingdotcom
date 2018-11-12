@@ -9,7 +9,7 @@
     <ul class="nav navbar-nav navbar-right" >
         <div class="a">
             <button type="button" class="btn btn-primary"  (click)="openModal('registration')">Register</button>
-            <button type="button" class="btn btn-primary" (click)="openModal('login')" >Sign In</button>
+            <button type="button" class="btn btn-primary"    (click)="openModal('login')"  onClick="window.location.reload">Sign In</button>
         </div>
     </ul>
     </div>
@@ -18,28 +18,31 @@
 <jw-modal id="login">
     <div class="jw-modal">
        
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="modal-content animate" action="/action_page.php">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" (ngSubmit)="createUser1()" class="modal-content animate" action="/action_page.php">
     <div class="container">
     <h1>Login</h1>
 
     <label for="email"><b>Email Address</b></label>
-    <input type="email" formControlName="email" placeholder="Enter Email" name="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" [(ngModel)]="user.email">
-    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-    <div *ngIf="f.email.errors.required">Email is required</div>
-    </div>
+    <input type="email" formControlName="email" placeholder="Enter Email" name="email"  [(ngModel)]="user.email">
+    <div class="col-10" *ngIf="userError?.email">
+        <span class="text text-danger">{{userError.email}}</span>
+        </div>
+   
+            
+    
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" formControlName="password" placeholder="Enter Password" name="psw" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [(ngModel)]="user.password">
-    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-    <div *ngIf="f.password.errors.required">Password is required</div>
-    </div>
+    <input type="password" formControlName="password" placeholder="Enter Password" name="psw"  [(ngModel)]="user.password">
+    <div class="col-10" *ngIf="userError?.password">
+        <span class="text text-danger">{{userError.password}}</span>
+        </div>
         
     <button type="submit" class="btn2" >Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="btn btn-danger" (click)="closeModal('login');" >Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw">Forgot <a href="#"  routerLink="/forgotpassword">password?</a></span>
     </div>
     </form>
     </div>

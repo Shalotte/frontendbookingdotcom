@@ -11,12 +11,14 @@
     <button class="btn btn-primary" type="button">Manage Account</button>
        <ul class="dropdown-content">
        <a href="#"  routerLink="/listbooking">View Bookings</a>
+       <a href="#"  routerLink="/payment_display">View Payments</a>
        </ul>
  </div>
+ <button type="button" class="btn btn-primary" routerLink="/listproperty">List Property</button>
   <ul class="nav navbar-nav navbar-right">
           <div class="a"> 
               <button type="button" class="btn btn-primary" routerLink="/custlayout">Home</button>
-              <button type="button" class="btn btn-primary" routerLink="/header_layout">Log Out</button>
+              <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
           </div>
   </ul>
 
@@ -84,7 +86,7 @@
             <td>{{properties.payment_method}}</td>
             <td>{{properties.cleaning_fees}}</td>
             <td><button type="button" class="btn btn-danger" (click)="deleteProperty(properties)" onClick="window.location.reload">Delete</button></td>
-            <td><button type="button" class="btn btn-success" (click)="updateProperty(property)">Edit</button></td>
+            <td><button type="button" class="btn btn-success" (click)="updateProperties(properties)">Edit</button></td>
           </tr>
         </tbody>
       </table>

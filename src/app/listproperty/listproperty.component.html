@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">
       <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
@@ -15,16 +13,17 @@
           <button class="btn btn-primary" type="button">Manage Account</button>
              <ul class="dropdown-content">
              <a href="#"  routerLink="/listbooking">View Bookings</a>
+             <a href="#"  routerLink="/payment_display">View Payments</a>
              <a href="#" routerLink='/listpropertydisplay'>Listed Property</a>
              </ul>
        </div>
        <button class="btn btn-primary" type="button" routerLink="/custlayout">Home</button>
-       <button class="btn btn-primary" type="button" routerLink='/header_layout'>Log Out</button>
+       <button class="btn btn-primary" type="button" (click)="logOut()">Log Out</button>
   </div>
 </nav>
 
 <div class="jumbotron">
-  <h3>Welcome {{user.first_name}}, you can list your property below!</h3>
+  <h3>Hey {{user.first_name}}, you can list your property below!</h3>
 </div>
 
 <form (ngSubmit)="processProperty()">
@@ -99,6 +98,20 @@
         </form>
     </div>
   </div>
+
+  <div class="round3">
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="form-group">
+          <h2>Upload property pic below.</h2>
+          <img [src]="Imageurl" style="width:300px;height:300px" >
+          <input type="file" class="form-control-file" name="pic"  (change)="onSelectFile($event)" >
+        </div>
+      </form>
+  </div>
+</div>
+
+
 <div class="round3">
     <div class="container">
       <form action="/action_page.php">
@@ -110,6 +123,11 @@
             <span class="text text-danger">{{listpError.apartment_type}}</span>
             </div>
           <small class="form-text text-muted">Give a brief description of your property e.g. Apartment with Balcony.</small>
+          <label for="no_living">Number of Guests Accommodated</label>
+          <input type="text" class="form-control"  name="guests"   [(ngModel)]="listproperty.guests">
+          <div class="col-10" *ngIf="listpError?.guests">
+            <span class="text text-danger">{{listpError.guests}}</span>
+            </div>
           <label for="no_living">Number of Bedrooms</label>
           <input type="text" class="form-control"  name="number_of_bedrooms"   [(ngModel)]="listproperty.number_of_bedrooms">
           <div class="col-10" *ngIf="listpError?.number_of_bedrooms">
@@ -160,7 +178,7 @@
           <div class="col-10" *ngIf="listpError?.children_accommodated">
             <span class="text text-danger">{{listpError.children_accommodated}}</span>
             </div>
-          <label for="minimum_stay">Minimium Stay</label>
+          <label for="minimum_stay">Enter Minimium Number of Days to Stay</label>
           <input type="text" class="form-control" name="minimum_stay" [(ngModel)]="listproperty.minimum_stay">
           <div class="col-10" *ngIf="listpError?.minimum_stay">
             <span class="text text-danger">{{listpError.minimum_stay}}</span>
@@ -176,6 +194,7 @@
             <span class="text text-danger">{{listpError.cleaning_fees}}</span>
             </div>
         </div>
+
       </form>
   </div>
 </div>

@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      /><button type="button" class="btn btn-primary">Accomodation</button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+            <div class="a">
+                <button class="btn btn-primary" type="button" routerLink="/admin">Home</button>
+                <div class="dropdown">
+                    <button class="btn btn-primary" type="button" >Manage Account</button>
+                       <ul class="dropdown-content">
+                       <a href="#" routerLink="/listusers">Manage Users</a>
+                       <a href="#" routerLink="/manageproperties">Manage Listed Properties</a>
+                       <a href="#" routerLink="/managepayments">Manage Payments</a>
+                       </ul>
+                 </div>
+                <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
+            </div>
+    </ul>
+  
+    </div>
+  </nav>
+
+  <div class="container">
+              <h2>Bookings List</h2>
+              <p>Below are all the bookings users have made.</p>    
+              <div class="table-responsive">                                                                                        
+              <table class="table">
+                <thead >
+                  <tr class="bg-primary">
+                    <th>id</th>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>Zip Code</th>
+                    <th>Country</th>
+                    <th>Telephone</th>
+                    <th>Cancel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let customerdetails of customerdetails">
+                      <td>{{customerdetails.id}}</td>
+                    <td>{{customerdetails.title}}</td>
+                    <td>{{customerdetails.first_name}}</td>
+                    <td>{{customerdetails.last_name}}</td>
+                    <td>{{customerdetails.telephone}}</td>
+                    <td>{{customerdetails.email_address}}</td>
+                    <td>{{customerdetails.street_address}}</td>
+                    <td>{{customerdetails.city}}</td>
+                    <td>{{customerdetails.country}}</td>
+                    <td>{{customerdetails.zip_code}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="deleteBooking(customerdetails)" onClick="window.location.reload">Cancel</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              
+      
+              
+

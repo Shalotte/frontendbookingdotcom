@@ -4,7 +4,6 @@ import {ListpropertyService} from '../shared_services/listproperty.service';
 import {Router} from '@angular/router';
 import {User} from '../user';
 import {UserService} from '../shared_services/user.service';
-import { NgAnalyzeModulesHost } from '../../../node_modules/@angular/compiler';
 
 
 @Component({
@@ -14,53 +13,60 @@ import { NgAnalyzeModulesHost } from '../../../node_modules/@angular/compiler';
 })
 export class ListpropertydisplayComponent implements OnInit {
 
-//private listproperty = new Listproperty();
 private user: User;
 id: string;
-private property: Listproperty;
+public property: Listproperty;
 public properties: Listproperty[];
 
-constructor(private _listpropertyService: ListpropertyService, private _router: Router) {
-  this.user = JSON.parse(localStorage.getItem('user'));
+constructor(private _listpropertyService: ListpropertyService, 
+private userService:UserService,private _router: Router) {
+this.user = JSON.parse(localStorage.getItem('user'));
 }
 
 ngOnInit() {
-  //this.listproperty = this._listpropertyService.getter();
-  this._listpropertyService.getProperty(this.user.id).subscribe(
-    (properties: any )=>{console.log(properties);
-      this.properties=properties;
-    },(error)=>{
-      console.log(error);
-    }
-  )
-  }
 
-  deleteProperty(properties){
-    this._listpropertyService.deleteProperty(properties.id).subscribe((data)=>{
-      //this.properties.splice(this.properties.indexOf(properties,1));
-      console.log(data);
-      
-    },(error)=>{console.log(error);
-   
-       location.reload();
-       if(error){
-       alert('Property has been successfully deleted');
-       this._router.navigate(['/listpropertydisplay']);
-  }
-  }
-  )
-  }
+if(this.user==null){
+alert('You are not logged in, please log in!');
+this._router.navigate(['/header_layout'])
+location.reload();
+}
 
- 
+this._listpropertyService.getProperty(this.user.id).subscribe(
+(properties: any )=>{
+this.properties=properties;
+},(error)=>{
+console.log(error);
+}
+)
+}
 
-    updateProperty(property){
-      this._listpropertyService.setter(property);
-      this._router.navigate(['/listproperty']);
-      }
-      
-    
-  
+updateProperties(properties){
+this._listpropertyService.setter(properties);
+console.log(properties);
+this._router.navigate(['/update_property']);
+}
 
+deleteProperty(properties){
+this._listpropertyService.deleteProperty(properties.id).subscribe((data)=>{ 
+console.log(data);
+},(error)=>{
+
+console.log(error);
+location.reload();
+if(error){
+alert('Property has been successfully deleted');
+this._router.navigate(['/listpropertydisplay']);
+
+}
+}
+)
+}
+
+logOut(){
+this.userService.logout();
+this._router.navigate(['/header_layout'])
+location.reload();
+}
 
 }
 

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { map, filter, switchMap, catchError} from 'rxjs/operators';
 import{Observable} from 'rxjs';
 import {Listproperty } from '../listproperty';
 import {User} from '../user';
+import {Http,Response, Headers, RequestOptions} from '@angular/http';
+import { map, filter, switchMap, catchError} from 'rxjs/operators';
 
 
 
@@ -14,13 +15,16 @@ import {User} from '../user';
 
 export class ListpropertyService {
 
-private baseUrl: string ='http://localhost:8080/appi';
+private baseUrl: string ='http://localhost:8080/api';
 private httpheader = {headers : new HttpHeaders ({'Content-Type': 'application/json'})};
+private headers = new Headers ({'Content-Type': 'application/json'});
+private options = new RequestOptions ({headers:this.headers});
+private listproperties:Listproperty[];
 public listproperty = new Listproperty();
 public user = new User();
 
 
-constructor(private _http:HttpClient) { 
+constructor(private _http:HttpClient, private http:Http) { 
 
 }
 
@@ -42,12 +46,27 @@ updateProperty(id:number,listproperty:Listproperty){
 }
 
 
-setter(listproperty :Listproperty){
+search_Destination(listproperties: string, rooms: number, guests: number){
+  return this.http.get(this.baseUrl+'/search/property/'+listproperties+'/'+guests+'/'+ rooms, this.options).pipe(map((response: Response) => response.json()))
+}
+
+  
+
+setter(listproperty){
   this.listproperty  = listproperty ;
 }
 
 getter(){
 return this.listproperty;
+}
+
+showResults(){
+  return this.listproperties;
+  }
+
+  saveResults(listproperties)
+{
+  this.listproperties = listproperties;
 }
 
 }

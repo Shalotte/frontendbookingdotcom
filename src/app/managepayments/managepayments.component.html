@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="http://www.medyatava.com/uploads/news/e1f22827-666f-4abc-987a-e7b6d75242c9.jpg"
+      /><button type="button" class="btn btn-primary">Accomodation</button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+            <div class="a">
+                <button class="btn btn-primary" type="button" routerLink="/admin">Home</button>
+                <div class="dropdown">
+                    <button class="btn btn-primary" type="button" >Manage Account</button>
+                       <ul class="dropdown-content">
+                       <a href="#" routerLink="/managebookings">Manage Bookings</a>
+                       <a href="#" routerLink="/manageproperties">Manage Listed Properties</a>
+                       <a href="#" routerLink="/listusers">Manage Users</a>
+                       </ul>
+                 </div>
+                <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
+            </div>
+    </ul>
+  
+    </div>
+  </nav>
+
+  <div class="container">
+      <h2>Payments List</h2>
+      <p>Below are all the payments users have made.</p>    
+      <div class="table-responsive">                                                                                        
+      <table class="table">
+        <thead >
+          <tr class="bg-primary">
+            <th>id</th>
+            <th>Card Holder Name</th>
+            <th>Card Type</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>CVC</th>
+            <th>Cancel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of payment">
+              <td>{{payment.id}}</td>
+            <td>{{payment.card_holder_name}}</td>
+            <td>{{payment.card_type}}</td>
+            <td>{{payment.card_number}}</td>
+            <td>{{payment.expiry_date}}</td>
+            <td>{{payment.cvc}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deletePayment(payment)" onClick="window.location.reload">Cancel</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+     
+      
+
+

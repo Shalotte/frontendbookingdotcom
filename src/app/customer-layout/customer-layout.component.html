@@ -15,7 +15,8 @@
         </div>
         <div class="col-sm-2">
             <div class="form-group">
-              <select class="form-control" [(ngModel)]="rooms" id="exampleSelect1">
+              <select class="form-control" [(ngModel)]="rooms" id="exampleSelect1" >
+                <option value="" selected disabled>Select Number Of Rooms</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -32,6 +33,7 @@
         <div class="col-sm-2">
             <div class="form-group">
               <select class="form-control" [(ngModel)]="guests" id="exampleSelect1">
+                <option value="" selected disabled>Select Number Of Guests</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -52,9 +54,7 @@
         </div>
         </div>
     </div>
-    <app-home-footer></app-home-footer>
-                
-    
+              
     <div class="row">
         <div class="column">
             <img id="logo1" style="width:100%" src="http://acceleratecapetown.co.za/wp/wp-content/uploads/2014/08/111ROLL-918x400.jpg"/>
@@ -81,3 +81,4 @@
             </div>
         </div>
         </div>
+        <app-home-footer></app-home-footer>

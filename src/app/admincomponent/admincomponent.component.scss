@@ -1,0 +1,299 @@
+.dropbtn {
+    background-color: #008cba;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #008cba;
+}
+
+.lbutton
+{
+
+    margin-left:  100%;
+}
+
+.dropdown {
+
+    margin-left:  100;
+}
+
+.lime {
+    float: right;
+}
+
+
+.tn {
+    background-color: #007fff;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btn:hover {
+    background-color: #007fff;
+  }
+
+  .round3:hover {
+    transform: scale(1.01);
+   
+  }
+  
+  .round3 {
+      border: 2px solid #ff8800;
+      border-radius: 12px;
+     
+      
+  }
+  
+  .round3 {
+    width: 960px;
+    margin: 0 auto 0 auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+   
+  }
+
+  .cbooking {
+
+    width: 960px;
+    margin: 0 auto 0 auto;
+    margin-bottom: 5%;
+  }
+
+  
+#logo1
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo2
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo3
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo4
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+   
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+#logo1
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo2
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo3
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+#logo4
+{
+    height:100%;
+    width:25%;
+    margin-top:-3px;
+    margin-right:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.column:hover #logo1
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo2
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo3
+{
+ transform: scale(1.06);
+
+}
+
+.column:hover #logo4
+{
+ transform: scale(1.06);
+}
+
+.column {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
